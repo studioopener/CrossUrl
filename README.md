@@ -7,7 +7,7 @@ Check existence through list of URLs
 Usage
 -----
 
-'''javascript
+```javascript
 //link CrossApp.js
 <script src="https://raw.github.com/studioopener/CrossUrl/master/CrossUrl.js"></script>
 //Create CrossApp class on a element 
@@ -24,4 +24,4 @@ window.onload = function() {
                                     });
   };
 </script>
-'''
+```
