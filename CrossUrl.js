@@ -9,8 +9,8 @@ function CrossUrl (elem, urls, options) {
 
 	this.options = {};
 
-	for ( var prop in CrossAppUrl.defaults ) {
-  		this.options[ prop ] = CrossAppUrl.defaults[ prop ];
+	for ( var prop in CrossUrl.defaults ) {
+  		this.options[ prop ] = CrossUrl.defaults[ prop ];
 	}
 
 	for ( prop in options ) {
@@ -20,12 +20,12 @@ function CrossUrl (elem, urls, options) {
     this._create();
 }
 
-CrossAppUrl.defaults = {
+CrossUrl.defaults = {
     timeout:500,
     message:"Sorry, The device is not yet supported."
 };
 
-CrossAppUrl.prototype = {
+CrossUrl.prototype = {
 	_create: function(){
 		var checker = this;
 		checker.checkframe = document.createElement('iframe');
