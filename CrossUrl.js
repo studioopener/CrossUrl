@@ -33,7 +33,7 @@ CrossUrl.prototype = {
 		var _body = document.getElementsByTagName('body') [0];
 		
 		if(checker.element.parentNode.tagName == 'A'){
-			checker.element.parentNode..href="#";
+			checker.element.parentNode.onclick="this.onclick=function(){return false}";
 		}
 		
 		checker.element.addEventListener('click', function(){
