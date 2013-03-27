@@ -32,7 +32,11 @@ CrossUrl.prototype = {
 		checker.checkframe.style.display = 'none';
 		var _body = document.getElementsByTagName('body') [0];
 		
-		this.element.addEventListener('click', function(){
+		if(checker.element.parentNode.tagName == 'A'){
+			checker.element.parentNode..href="#";
+		}
+		
+		checker.element.addEventListener('click', function(){
 			_body.appendChild(checker.checkframe);
 			checker.tryURL();
 			_body.removeChild(checker.checkframe);
