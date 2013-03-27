@@ -29,17 +29,17 @@ CrossUrl.prototype = {
 	_create: function(){
 		var checker = this;
 		checker.checkframe = document.createElement('iframe');
+    checker.checkframe.id = 'checkframe';
 		checker.checkframe.style.display = 'none';
 		var _body = document.getElementsByTagName('body') [0];
+    _body.appendChild(checker.checkframe);
 		
 		if(checker.element.parentNode.tagName == 'A'){
 			checker.element.parentNode.onclick=function(){return false};
 		}
 		
 		checker.element.addEventListener('click', function(){
-			_body.appendChild(checker.checkframe);
 			checker.tryURL();
-			_body.removeChild(checker.checkframe);
 		}, false);
 	},
 
@@ -61,7 +61,7 @@ CrossUrl.prototype = {
                             return;
                         }
                    }
-                   }, this.timeout);
-        checker.checkframe.location = this.urlList[i];
+                   }, checker.options.timeout);
+        checker.checkframe.src = checker.urlList[i];
     }
 }
