@@ -53,9 +53,11 @@ CrossUrl.prototype = {
         setTimeout(function() {
                    var now2 = new Date();
                    var time2 = now2.getTime();
-                   if(time2 - now2 < checker.options.timeout*1.1) {
+                   if(time2 - time < checker.options.timeout*1.1) {
                         if(i+1<checker.urlList.length){
-                            checker.tryURL(i+1)
+                        	now = new Date();
+        			time = now.getTime();	
+                            	checker.tryURL(i+1)
                         }else{
                             alert(checker.options.message);
                             return;
